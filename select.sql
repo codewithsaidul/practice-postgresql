@@ -39,3 +39,8 @@ INSERT INTO students (first_name, last_name, age, grade, course, email, dob, blo
 
 
 SELECT * FROM students ORDER BY dob ASC; 
+
+
+
+SELECT * FROM students
+   WHERE (country = 'USA' OR country = 'Australia') AND age >= 20 
