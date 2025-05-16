@@ -35,3 +35,5 @@ ALTER TABLE enrollment
 
 ALTER TABLE enrollment
     drop constraint uniue_enrolllment_id;
+
+TRUNCATE TABLE enrollment;
