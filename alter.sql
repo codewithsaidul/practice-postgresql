@@ -1,0 +1,2 @@
+-- Active: 1747406338289@@127.0.0.1@5432@ph
+SELECT * FROM student;
