@@ -43,4 +43,11 @@ SELECT * FROM students ORDER BY dob ASC;
 
 
 SELECT * FROM students
-   WHERE (country = 'USA' OR country = 'Australia') AND age >= 20 
+   WHERE (country = 'USA' OR country = 'Australia') AND age >= 20 ;
+
+
+
+SELECT concat(first_name, ' ', last_name) as "Full Name" FROM students;
+
+
+SELECT sum(age) from students
