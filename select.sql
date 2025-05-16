@@ -20,17 +20,17 @@ INSERT INTO students (first_name, last_name, age, grade, course, email, dob, blo
 ('Charlie', 'Brown', 19, 'A', 'Physics', 'charlie.brown@example.com', '2005-01-25', 'B+', 'UK'),
 ('Diana', 'Clark', 21, 'B+', 'Chemistry', 'diana.clark@example.com', '2003-11-10', 'AB-', 'Australia'),
 ('Ethan', 'Miller', 23, 'A', 'Economics', 'ethan.miller@example.com', '2001-05-05', 'O-', 'Germany'),
-('Fiona', 'Garcia', 20, 'C', 'Literature', 'fiona.garcia@example.com', '2004-08-19', 'B-', 'France'),
+('Fiona', 'Garcia', 20, 'C', 'Literature', null, '2004-08-19', 'B-', 'France'),
 ('George', 'Martinez', 24, 'B-', 'Philosophy', 'george.martinez@example.com', '2000-12-01', 'A+', 'Mexico'),
 ('Hannah', 'Lee', 21, 'A', 'Biology', 'hannah.lee@example.com', '2003-04-30', 'O+', 'South Korea'),
 ('Ian', 'Walker', 22, 'C+', 'History', 'ian.walker@example.com', '2002-06-15', 'AB+', 'New Zealand'),
 ('Julia', 'Hall', 20, 'B', 'Art', 'julia.hall@example.com', '2004-09-11', 'B+', 'Italy'),
-('Kevin', 'Allen', 25, 'A-', 'Sociology', 'kevin.allen@example.com', '1999-10-03', 'O-', 'USA'),
+('Kevin', 'Allen', 25, 'A-', 'Sociology', null, '1999-10-03', 'O-', 'USA'),
 ('Laura', 'Young', 19, 'B+', 'Engineering', 'laura.young@example.com', '2005-02-27', 'A-', 'India'),
 ('Michael', 'King', 23, 'A+', 'Statistics', 'michael.king@example.com', '2001-07-13', 'AB+', 'Ireland'),
 ('Nina', 'Wright', 21, 'C', 'Law', 'nina.wright@example.com', '2003-03-09', 'B-', 'South Africa'),
 ('Oscar', 'Lopez', 20, 'A-', 'Architecture', 'oscar.lopez@example.com', '2004-10-23', 'A+', 'Spain'),
-('Paula', 'Scott', 22, 'B+', 'Political Science', 'paula.scott@example.com', '2002-05-01', 'O+', 'Brazil'),
+('Paula', 'Scott', 22, 'B+', 'Political Science', null, '2002-05-01', 'O+', 'Brazil'),
 ('Quincy', 'Adams', 24, 'A', 'Astronomy', 'quincy.adams@example.com', '2000-08-16', 'AB-', 'USA'),
 ('Rachel', 'Baker', 20, 'B', 'Journalism', 'rachel.baker@example.com', '2004-01-29', 'B+', 'UK'),
 ('Steven', 'Nelson', 21, 'C+', 'Music', 'steven.nelson@example.com', '2003-06-17', 'O-', 'Sweden'),
@@ -45,9 +45,23 @@ SELECT * FROM students ORDER BY dob ASC;
 SELECT * FROM students
    WHERE (country = 'USA' OR country = 'Australia') AND age >= 20 ;
 
-
+SELECT * FROM students
+    WHERE country <> 'USA';
 
 SELECT concat(first_name, ' ', last_name) as "Full Name" FROM students;
 
 
-SELECT sum(age) from students
+SELECT sum(age) from students;
+
+SELECT MAX(length(first_name)) FROM students;
+
+
+SELECT * FROM students
+    WHERE NOT country = 'USA';
+
+
+SELECT * FROM students
+    WHERE email IS NOT NULL;
+
+
+SELECT COALESCE(email, 'Not Provided'), * FROM students;
