@@ -1,4 +1,4 @@
--- Active: 1747406338289@@127.0.0.1@5432@ph
+-- Active: 1747424605971@@127.0.0.1@5432@ph
 SELECT * FROM enrollment;
 
 ALTER TABLE enrollment
@@ -27,3 +27,11 @@ ALTER TABLE enrollment
 
 ALTER TABLE enrollment
     alter COLUMN courseName drop DEFAULT;
+
+
+ALTER TABLE enrollment
+    ADD constraint uniue_enrolllment_id UNIQUE(id);
+
+
+ALTER TABLE enrollment
+    drop constraint uniue_enrolllment_id;
