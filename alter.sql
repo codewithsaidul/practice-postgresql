@@ -7,4 +7,23 @@ ALTER TABLE enrollment
 INSERT INTO enrollment VALUES (5, 'saidul', 'Saidul Islam', 'exam@gmail.com', 23, 'TypeScript Technocrat');
 
 ALTER TABLE enrollment
-    DROP COLUMN courseName
+    DROP COLUMN courseName;
+
+ALTER TABLE enrollment
+    RENAME COLUMN age to user_age;
+
+
+ALTER TABLE enrollment
+    ADD COLUMN courseName VARCHAR(5);
+
+
+ALTER TABLE enrollment
+    alter COLUMN courseName type VARCHAR(50);
+
+
+ALTER TABLE enrollment
+    alter COLUMN courseName set DEFAULT 'PH';
+
+
+ALTER TABLE enrollment
+    alter COLUMN courseName drop DEFAULT;
