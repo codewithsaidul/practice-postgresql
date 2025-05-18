@@ -1,4 +1,4 @@
--- Active: 1747424605971@@127.0.0.1@5432@ph
+-- Active: 1747486928827@@127.0.0.1@5432@ph
 CREATE TABLE students (
     std_id SERIAL PRIMARY KEY,
     first_name VARCHAR(20) NOT NULL,
@@ -65,3 +65,20 @@ SELECT * FROM students
 
 
 SELECT COALESCE(email, 'Not Provided'), * FROM students;
+
+
+SELECT * from students
+    WHERE country NOT IN('Argentina', 'Brazil', 'Germany');
+
+
+SELECT * FROM students
+    WHERE dob BETWEEN '2002-01-01' and '2003-05-01';  
+
+
+SELECT * FROM students
+    WHERE first_name LIKE('___a__');   
+
+
+
+SELECT * FROM students
+    WHERE first_name ILIKE('a%');              
