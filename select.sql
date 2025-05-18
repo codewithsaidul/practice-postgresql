@@ -81,4 +81,21 @@ SELECT * FROM students
 
 
 SELECT * FROM students
-    WHERE first_name ILIKE('a%');              
+    WHERE first_name ILIKE('a%');       
+
+
+
+
+
+SELECT * FROM students LIMIT 10 OFFSET 10 * 0;
+SELECT * FROM students LIMIT 10 OFFSET 10 * 1;
+SELECT * FROM students LIMIT 10 OFFSET 10 * 2;
+SELECT * FROM students LIMIT 10 OFFSET 10 * 3;
+
+
+
+SELECT * FROM students;
+
+
+DELETE FROM students 
+    where country IN('India', 'Pakistan');
