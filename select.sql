@@ -99,3 +99,8 @@ SELECT * FROM students;
 
 DELETE FROM students 
     where country IN('India', 'Pakistan');
+
+
+UPDATE students
+    set email = 'Not Provided'
+    WHERE email IS NULL
