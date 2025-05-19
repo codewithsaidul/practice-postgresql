@@ -15,7 +15,7 @@ CREATE TABLE users (
 CREATE TABLE post (
     id SERIAL PRIMARY KEY,
     title TEXT NOT NULL,
-    user_id INTEGER REFERENCES users(id)  ON DELETE SET DEFAULT DEFAULT 2
+    user_id INTEGER REFERENCES users(id)  ON DELETE  CASCADE
 );
 
 
@@ -38,4 +38,17 @@ SELECT * FROM post;
 
 
 DELETE FROM users
-    WHERE id = 4;
+    WHERE id = 3;
+
+
+
+SELECT * FROM post as p
+  INNER  JOIN users as u on p.user_id = u.id;
+
+
+
+
+
+
+
+
