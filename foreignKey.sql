@@ -41,28 +41,6 @@ DELETE FROM users
     WHERE id = 3;
 
 
--- Learning Inner Join
-SELECT * FROM post as p
-  JOIN users as u on p.user_id = u.id;
-
-
-
--- Learning Left Join
-SELECT * FROM post as p
-  LEFT JOIN users as u on p.user_id = u.id;
-
-
-
-
--- Learning Right Join
-SELECT * FROM post
-  RIGHT JOIN users on post.user_id = users.id;
-
-
-
-SELECT * FROM post
-  RIGHT JOIN users on post.user_id = users.id;
-
 
 
 
