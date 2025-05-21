@@ -49,3 +49,50 @@ $$;
 SELECT emp_count();
 SELECT emp_delete();
 SELECT delete_emp_by_id(29);
+
+
+
+
+
+CREATE PROCEDURE remove_emp()
+LANGUAGE plpgsql
+AS
+$$
+    BEGIN
+        DELETE FROM employees1 WHERE employee_id = 28;
+    END
+$$;
+
+
+CREATE PROCEDURE remove_emp_var()
+LANGUAGE plpgsql
+AS
+$$
+    DECLARE
+    test_var INT;
+    BEGIN
+        SELECT employee_id INTO test_var from employees1 WHERE employee_id = 27;
+        DELETE FROM employees1 WHERE employee_id = test_var;
+    END
+$$;
+
+
+CREATE PROCEDURE remove_emp_var_parameter(p_emp_id INT)
+LANGUAGE plpgsql
+AS
+$$
+    DECLARE
+    test_var INT;
+    BEGIN
+        SELECT employee_id INTO test_var from employees1 WHERE employee_id = p_emp_id;
+        DELETE FROM employees1 WHERE employee_id = test_var;
+
+        -- RAISE NOTICE 'Employee Remove Successfully!';
+    END
+$$;
+
+DROP PROCEDURE remove_emp_var_parameter(INT);
+
+CALL remove_emp();
+CALL remove_emp_var();
+CALL remove_emp_var_parameter(24);
