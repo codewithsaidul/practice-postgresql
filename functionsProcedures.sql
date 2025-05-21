@@ -55,7 +55,7 @@ SELECT delete_emp_by_id(29);
 
 
 CREATE PROCEDURE remove_emp()
-LANGUAGE plpgsql
+LANGUAGE PLPGSQL
 AS
 $$
     BEGIN
